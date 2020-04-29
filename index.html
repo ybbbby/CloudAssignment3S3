@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <!-- **DO THIS**: -->
+    <!--   Replace SDK_VERSION_NUMBER with the current SDK version number -->
+    <!-- <meta charset="utf-8"> -->
+    <title>My Photo Albums App</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta24/shoelace.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="shortcut icon" href="">
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="apigClient.js"></script>
+    <script type="text/javascript" src="require.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.663.0.min.js"></script>
+    <script src="./app.js"></script>
+    <script>
+       function getHtml(template) {
+          return template.join('\n');
+       }
+       listAlbums();
+    </script>
+  </head>
+  <style>
+      body {
+          font-family: Arial;
+          background-color: rgba(192, 192, 192, 0.363);
+      }
+      * {
+          box-sizing: border-box;
+      }
+      .example input[type=text] {
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 80%;
+        background: #f1f1f1;
+      }
+    .example button {
+        float: left;
+        width: 10%;
+        padding: 10px;
+        background: #2196F3;
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none;
+        cursor: pointer;
+    }
+
+    .example button:hover {
+        background: #0b7dda;
+    }
+
+    .example::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    #voice {
+        position: absolute;
+        margin-left: -100px;
+        /* left: 860px; */
+        padding-top: 15px;
+        cursor: pointer;
+    }
+    .micro {
+        font-size: 17px;
+    }
+    .start {
+        color: #0b7dda;
+    }
+    .stop {
+        color: rgb(204, 0, 0);
+    }
+  </style>
+  <body>
+      <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h1>My Photo Albums App</h1>
+          <div class="example input-icons" >
+            <input id="search_query" type="text" placeholder="Search.." name="search2">
+            <span class="micro"><i id="voice" class="fa fa-microphone start"></i></span>
+            <button id="submit"><i class="fa fa-search"></i></button>
+          </div>
+          <div id="app"></div>
+      </div>
+      <br>
+      <br>
+      <div id="result">
+
+      </div>
+        </div>
+    </div>
+          
+    
+  </body>
+</html>
